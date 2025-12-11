@@ -1,0 +1,52 @@
+---
+title: "Assignment 4"
+author: "Mai Vu"
+format: html
+editor: visual
+---
+
+# Section 1
+```{r}
+# Select one numerical and one categorical variable in the data set imported in this notebook and generate a box-and-whisker plot that has not been created as example in this notebook.
+dfr <- readr::read_csv("PlottingData.csv")
+head(dfr)
+
+library(ggplot2)
+
+ggplot(dfr, aes(x = Diabetes, y = dBP, fill = Diabetes)) +
+  geom_boxplot() +
+  labs(title = "Boxplot of dBP by Diabetes status",
+       x = "Diabetes",
+       y = "Diastolic Blood Pressure (dBP)") +
+  theme_minimal()
+```
+
+# Section 2
+```{r}
+# Select two numerical variables and a categorical variable and create a scatter plot (grouped by the levels of the categorical variable) that has not been created as example in this notebook.
+library(ggplot2)
+
+ggplot(dfr, aes(x = HB, y = HR, color = Obesity)) +
+  geom_point(size = 2) +
+  labs(title = "Scatter plot of HB vs HR grouped by Obesity",
+       x = "Hemoglobin (HB)",
+       y = "Heart Rate (HR)") +
+  theme_minimal()
+```
+
+# Section 3
+```{r}
+# Look up what a mosaic plot is. Import an appropriate library and create a mosaic plot of the variables Ventilation and Obesity.
+# A moasic plot is a graphical representation of categorical data that displays the proportions of different categories in a contingency table. It uses rectangles to represent the frequencies of combinations of categories, with the area of each rectangle proportional to the frequency of that combination.
+
+# Create a mosaic plot of Ventilation and Obesity
+library(ggplot2)
+
+ggplot(dfr, aes(x = Ventilation, fill = Obesity)) +
+  geom_bar(position = "fill") +
+  labs(title = "Mosaic-style plot of Ventilation vs Obesity",
+       x = "Ventilation", y = "Proportion") +
+  scale_y_continuous(labels = scales::percent) +
+  theme_minimal()
+```
+

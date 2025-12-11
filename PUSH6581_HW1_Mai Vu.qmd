@@ -1,0 +1,69 @@
+---
+title: "Assignment 1_Mai Vu"
+author: "Mai Vu"
+format: pdf
+editor: visual
+---
+
+Section 1
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+```{r}
+# Calculate 3 * 4 + 7 - 8 / 13
+3 * 4 + 7 - 8 / 13
+```
+
+```{r}
+# Calculate e^-3
+exp(-3)
+```
+
+```{r}
+# Calculate 4th root of 100
+100^(1/4)
+
+```
+
+```{r}
+# Natural log of 15.8
+log (15.8)
+```
+
+```{r}
+# Calculate sin(pi/6)
+sin(pi/6)
+```
+
+Section 2
+
+```{r}
+# The code produce the error becasue the 'Y' here is upper case where the 'y' that is equal to 2 is lower case so R does not recognize the character Y. That's why it's giving the "object 'Y' not found error
+```
+
+Section 3
+
+```{r}
+v<-seq(3,21,by=2)
+v
+```
+
+Section 4
+
+```{r}
+lab_vector <- c(3, 6, 3.141592654, 3 + 4i)
+lab_vector
+3+4i
+# The expression 3+4i produce a complex number in R. Becasue one element of the vector is complex, R coerces all the element in lab_vector to a complex number.
+```
+
+Section 5
+
+```{r}
+height<-rnorm(100, mean=172,sd=10)
+height<-round(height, 1)
+head(height)
+```

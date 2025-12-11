@@ -1,0 +1,55 @@
+---
+title: "Homework3"
+author: "Mai Vu"
+format: html
+editor: visual
+---
+
+```{r}
+#Read the file heart_failure.csv to R
+heart_failure<-read.csv("heart_failure.csv")
+head(heart_failure)
+```
+```{r}
+# Determine the unique elements for the smoking smoking variable
+unique(heart_failure$smoking)
+
+```
+
+```{r}
+# Select all the observations for the smoking smoking variable only.
+smoking<-heart_failure[,"smoking"]
+smoking
+```
+
+```{r}
+# Select all the observations only for those who do not smoke.
+nonsmoking<-heart_failure[heart_failure$smoking=="No",]
+nonsmoking
+```
+
+```{r}
+# Select the observations in rows 100 through 110 and show only the diabetesand smoking variable data
+diabetes_smoking<-heart_failure[100:110,c("diabetes","smoking")]
+diabetes_smoking
+```
+
+```{r}
+# Select all the observations for those who smoked and died.
+smoke_die<-heart_failure[heart_failure$smoking=="Yes" & heart_failure$death=="Yes",]
+smoke_die
+
+```
+
+```{r}
+# Select all the observations for those who were either female or who did not smoke or who has diabetes.
+subset_data<-heart_failure[heart_failure$smoking=="No" | heart_failure$sex=="Female" | heart_failure$diabetes=="Yes",]
+subset_data
+```
+
+```{r}
+#caculate the mean age for those who smoked and died.
+mean_age_smoke_die<-mean(heart_failure$age[heart_failure$smoking=="Yes" & heart_failure$death=="Yes"])
+
+```
+
